@@ -44,6 +44,8 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 app::app():BApplication("application/x-vnd.Be-elfexecutable") {
 	windows_open=0;
+	openpanel = NULL;
+	savepanel = NULL;
 }
 
 app::~app() {
