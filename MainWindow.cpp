@@ -65,8 +65,9 @@ MainWindow::MainWindow(BRect frame, const char *title, BFile *file)
 	rect.right-=B_V_SCROLL_BAR_WIDTH;
 	BRect	text_rect=rect;
 	text_rect.InsetBy(3,3);
-
-	contentView=new BTextView(rect, "contentView", text_rect,be_fixed_font, &((rgb_color){0,0,0,255}),B_FOLLOW_ALL_SIDES, B_WILL_DRAW);
+	
+	rgb_color color = make_color(0,0,0,255);
+	contentView=new BTextView(rect, "contentView", text_rect,be_fixed_font, &color,B_FOLLOW_ALL_SIDES, B_WILL_DRAW);
 	scrollView=new BScrollView("scrollView", contentView, B_FOLLOW_ALL_SIDES, 0, true, true);
 	contentView->MakeEditable(true);
 	contentView->MakeResizable(false, scrollView);
@@ -126,7 +127,8 @@ MainWindow::MainWindow(BRect frame, const char *title, const char *text, off_t l
 	BRect	text_rect=rect;
 	text_rect.InsetBy(3,3);
 
-	contentView=new BTextView(rect, "contentView", text_rect,be_fixed_font, &((rgb_color){0,0,0,255}),B_FOLLOW_ALL_SIDES, B_WILL_DRAW);
+	rgb_color color = make_color(0,0,0,255);
+	contentView=new BTextView(rect, "contentView", text_rect,be_fixed_font, &color,B_FOLLOW_ALL_SIDES, B_WILL_DRAW);
 	scrollView=new BScrollView("scrollView", contentView, B_FOLLOW_ALL_SIDES, 0, true, true);
 	contentView->MakeEditable(true);
 	contentView->MakeResizable(false, scrollView);
